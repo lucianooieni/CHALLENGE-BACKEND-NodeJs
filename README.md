@@ -42,15 +42,15 @@ Para realizar peticiones a los endpoints subsiguientes el usuario deberá contar
 obtendrá al autenticarse. Para ello, deberán desarrollarse los endpoints de registro y login, que
 permitan obtener el token.
 Los endpoints encargados de la autenticación deberán ser:
-● /auth/login
-● /auth/register
+● ``/auth/login``
+● ``/auth/register``
 
 ##### 3. Listado de Personajes
 El listado deberá mostrar:
 ● Imagen.
 ● Nombre.
 El endpoint deberá ser:
-● /characters
+● ``/characters``
 
 ##### 4. Creación, Edición y Eliminación de Personajes (CRUD)
 Deberán existir las operaciones básicas de creación, edición y eliminación de personajes.
@@ -61,14 +61,14 @@ series relacionadas.
 Deberá permitir buscar por nombre, y filtrar por edad, peso o películas/series en las que participó.
 Para especificar el término de búsqueda o filtros se deberán enviar como parámetros de query:
 
-● GET /characters?name=nombre
-● GET /characters?age=edad
-● GET /characters?movies=idMovie
+● `GET` `/characters?name=nombre`
+● `GET` `/characters?age=edad`
+● `GET` `/characters?movies=idMovie`
 
 ##### 7. Listado de Películas
 Deberá mostrar solamente los campos imagen, título y fecha de creación.
 El endpoint deberá ser:
-● GET /movies
+● `GET` `/movies`
 
 ##### 8. Detalle de Película / Serie con sus personajes
 Devolverá todos los campos de la película o serie junto a los personajes asociados a la misma
@@ -78,9 +78,9 @@ Deberán existir las operaciones básicas de creación, edición y eliminación 
 Deberá permitir buscar por título, y filtrar por género. Además, permitir ordenar los resultados
 por fecha de creación de forma ascendiente o descendiente.
 El término de búsqueda, filtro u ordenación se deberán especificar como parámetros de query:
-● GET /movies?name=nombre
-● GET /movies?genre=idGenero
-● GET /movies?order=ASC | DESC
+● `GET` `/movies?name=nombre`
+● `GET` `/movies?genre=idGenero`
+● `GET` `/movies?order=ASC | DESC`
 
 ##### 11. Envío de emails
 Al registrarse en el sitio, el usuario deberá recibir un email de bienvenida. Es recomendable, la
