@@ -1,6 +1,7 @@
 const express = require('express')
 const characterRouter = express.Router()
 const Character = require('../database/models/Character')
+const Movie = require('../database/models/Movie')
 
 characterRouter.get('/', async (request, response) => {
   const users = await Character.findAll({
@@ -49,6 +50,14 @@ characterRouter.delete('/:id', async (request, response) => {
   } catch (error) {
     response.json(error)
   }
+})
+
+characterRouter.get('/details', (request, response) => {
+  Character.findAll({
+    include: {
+      model: Movie
+    }
+  }).then(res => response.json(res))
 })
 
 module.exports = characterRouter

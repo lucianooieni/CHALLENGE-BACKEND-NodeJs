@@ -6,7 +6,7 @@ class Movie extends Model {}
 Movie.init({
   image: DataTypes.STRING,
   title: DataTypes.STRING,
-  creationDate: DataTypes.DATE,
+  creationDate: DataTypes.STRING,
   rating: {
     type: DataTypes.INTEGER,
     validate: {
@@ -15,7 +15,9 @@ Movie.init({
     }
   }
 }, {
-  sequelize, modelName: 'movie'
+  sequelize,
+  modelName: 'movie',
+  timestamps: false
 })
 
 module.exports = Movie

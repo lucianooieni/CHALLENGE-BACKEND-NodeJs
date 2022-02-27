@@ -7,7 +7,9 @@ Gender.init({
   name: DataTypes.STRING,
   image: DataTypes.STRING
 }, {
-  sequelize, modelName: 'gender'
+  sequelize,
+  modelName: 'gender',
+  timestamps: false
 })
 
 module.exports = Gender
