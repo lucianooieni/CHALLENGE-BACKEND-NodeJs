@@ -3,11 +3,22 @@ const express = require('express')
 const app = express()
 const sequelize = require('./database/db')
 require('./database/asociations')
+const characterRouter = require('./controllers/characters')
+
+app.use(express.json())
 
 app.get('/', (request, response) => {
   response
     .status(200)
     .send('<h1>CHALLENGE BACKEND - NodeJs</h1>')
+})
+
+app.use('/characters', characterRouter)
+
+app.use((request, response) => {
+  response
+    .status(404)
+    .send({ error: 'unknown endpoint' })
 })
 
 const PORT = process.env.PORT
