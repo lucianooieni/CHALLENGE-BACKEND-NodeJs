@@ -3,11 +3,11 @@ const movieRouter = express.Router()
 const Character = require('../database/models/Character')
 const Movie = require('../database/models/Movie')
 
-movieRouter.get('/', (request, response) => {
-  Movie.findAll({
+movieRouter.get('/', async (request, response) => {
+  const movies = await Movie.findAll({
     attributes: ['image', 'title', 'creationDate']
   })
-    .then(movies => response.json(movies))
+  response.json(movies)
 })
 
 movieRouter.get('/details', (request, response) => {

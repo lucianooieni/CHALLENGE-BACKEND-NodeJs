@@ -4,8 +4,10 @@ const Character = require('../database/models/Character')
 const Movie = require('../database/models/Movie')
 
 characterRouter.get('/', async (request, response) => {
+  console.log('query: ', request.query)
   const users = await Character.findAll({
-    attributes: ['name', 'image']
+    attributes: ['name', 'image'],
+    where: request.query
   })
   response.json(users)
 })

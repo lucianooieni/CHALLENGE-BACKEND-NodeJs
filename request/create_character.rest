@@ -5,8 +5,8 @@ Content-Type: application/json
 
 {
   "image": "ldkjfgdfgj",
-  "name": "luciano",
-  "age": 20,
+  "name": "yamil",
+  "age": 25,
   "weight": 80.54,
   "history": "kjdflgkjdlfgkj"
 }
