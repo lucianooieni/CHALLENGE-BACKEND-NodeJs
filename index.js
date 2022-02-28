@@ -5,6 +5,7 @@ const sequelize = require('./database/db')
 require('./database/asociations')
 const characterRouter = require('./controllers/characters')
 const movieRouter = require('./controllers/movies')
+const auth = require('./controllers/auth')
 
 app.use(express.json())
 
@@ -16,6 +17,9 @@ app.get('/', (request, response) => {
 
 app.use('/characters', characterRouter)
 app.use('/movies', movieRouter)
+
+app.post('/auth/login', auth.signIn)
+app.post('/auth/register', auth.signUp)
 
 app.use((request, response) => {
   response
