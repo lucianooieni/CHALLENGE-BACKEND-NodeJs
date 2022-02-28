@@ -1,0 +1,6 @@
+PUt http://localhost:3001/movies/3
+Content-Type: application/json
+
+{
+  "image": "imagen de peter"
+}
