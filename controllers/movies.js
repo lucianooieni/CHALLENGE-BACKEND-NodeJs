@@ -19,10 +19,11 @@ movieRouter.get('/details', (request, response) => {
     .then(movies => response.json(movies))
 })
 
-movieRouter.post('/', (request, response) => {
+movieRouter.post('/', (request, response, next) => {
   const { image, title, creationDate, rating } = request.body
   Movie.create({ image, title, creationDate, rating })
     .then(res => response.json(res))
+    .catch(error => next(error))
 })
 
 movieRouter.put('/:id', async (request, response) => {

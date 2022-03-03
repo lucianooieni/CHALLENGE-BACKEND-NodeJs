@@ -6,6 +6,8 @@ require('./database/asociations')
 const characterRouter = require('./controllers/characters')
 const movieRouter = require('./controllers/movies')
 const auth = require('./controllers/auth')
+const notFound = require('./middlewares/notFound')
+const handleError = require('./middlewares/handleError')
 
 app.use(express.json())
 
@@ -21,11 +23,8 @@ app.use('/movies', movieRouter)
 app.post('/auth/login', auth.signIn)
 app.post('/auth/register', auth.signUp)
 
-app.use((request, response) => {
-  response
-    .status(404)
-    .send({ error: 'unknown endpoint' })
-})
+app.use(notFound)
+app.use(handleError)
 
 const PORT = process.env.PORT
 
@@ -42,3 +41,5 @@ app.listen(PORT, () => {
   //   .then(() => console.log('Connection has been established successfully.'))
   //   .catch(error => console.error('Unable to connect to the database:', error))
 })
+
+module.exports = app

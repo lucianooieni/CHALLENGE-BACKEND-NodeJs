@@ -4,7 +4,49 @@ Content-Type: application/json
 
 
 {
-  "name": "luciano",
+  "name": "asasd",
   "email": "luciano@gmail.com",
-  "password": "luciano21"
+  "password": "luh"
 }
+
+
+
+# "name": "SequelizeValidationError"
+# "message": "name must be between 3 and 255 characters",
+# "type": "Validation error",
+# "path": "name",
+# "validatorKey": "len",
+# "validatorName": "len",
+
+
+# "name": "SequelizeValidationError"
+# "message": "email format invalid",
+# "type": "Validation error",
+# "path": "email",
+# "validatorKey": "isEmail",
+# "validatorName": "isEmail",
+
+
+# no lo puedo validar tan dfacilmente xq me devuelve el passwordHash
+# "name": "SequelizeValidationError"
+# "message": "password too short, must be between 8 and 16 characters",
+# "type": "Validation error",
+# "path": "password",
+
+
+# cuando ya hay un usuario con el email valido
+# "name": "SequelizeUniqueConstraintError"
+# "message": "email must be unique",
+# "type": "unique violation",
+# "path": "email",
+# "validatorKey": "not_unique",
+# "validatorName": null,
+
+
+# no puede ser null un campo
+# "name": "SequelizeValidationError"
+# "message": "user.email cannot be null"
+# "type": "notNull Violation"
+# "path": "email"
+# "validatorKey": "is_null",
+# "validatorName": null,

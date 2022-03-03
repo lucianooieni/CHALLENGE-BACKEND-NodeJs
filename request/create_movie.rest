@@ -6,5 +6,10 @@ Content-Type: application/json
 {
   "image": "ldkjfgdfgj",
   "title": "luciano",
-  "rating": 5
+  "rating": 7
 }
+
+# "name": "SequelizeValidationError"
+# "message": "Validation max on rating failed",
+# "type": "Validation error",
+# "path": "rating"

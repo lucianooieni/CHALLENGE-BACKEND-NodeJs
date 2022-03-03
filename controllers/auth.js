@@ -39,7 +39,7 @@ const signIn = async (request, response) => {
   }
 }
 
-const signUp = async (request, response) => {
+const signUp = async (request, response, next) => {
   try {
     const { name, email, password } = request.body
 
@@ -54,7 +54,8 @@ const signUp = async (request, response) => {
 
     response.json(user)
   } catch (error) {
-    response.json(error)
+    // response.status(401).json(error)
+    next(error)
   }
 }
 

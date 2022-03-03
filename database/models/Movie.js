@@ -10,8 +10,14 @@ Movie.init({
   rating: {
     type: DataTypes.INTEGER,
     validate: {
-      min: 1,
-      max: 5
+      min: {
+        args: 1,
+        msg: 'invalid range, number between 1 and 6'
+      },
+      max: {
+        args: 6,
+        msg: 'invalid range, number between 1 and 6'
+      }
     }
   }
 }, {
